@@ -35,7 +35,7 @@ export default {
   data () {
     return {
       visibleDetail: false,
-      visiblePreview: true
+      visiblePreview: false
     }
   },
   methods: {
