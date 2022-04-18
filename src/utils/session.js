@@ -13,3 +13,8 @@ export function writeSession (cred) {
   const value = cred ? JSON.stringify(cred) : ''
   Cookies.set(KEY, value)
 }
+
+export function getSession () {
+  const sessionStr = Cookies.get(KEY)
+  return JSON.parse(sessionStr || '{}')
+}

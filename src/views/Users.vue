@@ -1,7 +1,7 @@
 <template>
   <div class="user-page">
     <div class="user-page_title">
-      Users
+      USERS
     </div>
     <div class="user-page__list">
       <div class="user-page__list__item"
@@ -18,6 +18,9 @@
 <style lang="scss" scoped>
 .user-page {
   width: 80vw;
+  height: 100vh;
+  overflow: scroll;
+
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -30,8 +33,10 @@
   &_title {
     font-weight: bold;
     text-align: right;
-    margin-right: 150px;
-    border-bottom: 2px solid;
+    font-size: x-large;
+    margin-left: 80%;
+    border-bottom: 6px solid;
+    width: 75px;
   }
 }
 </style>

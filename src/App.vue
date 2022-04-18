@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <SidebarNav class="app_sidebar" v-if="isNotLoginPage"/>
-    <router-view class="app_content"/>
+    <div class="app_content">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -37,9 +39,12 @@ export default {
   .app {
     &_sidebar {
       grid-area: "menu";
+      width: 15vw;
+      padding-right: 40px;
     }
     &_content {
       grid-area: "main";
+      max-height: 100hv;
     }
 
     &_logout {

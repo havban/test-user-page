@@ -1,7 +1,7 @@
 <template>
   <div>
     <hr/>
-    Menu Item
+    <strong> Menu Item </strong>
     <hr/>
   </div>
 </template>

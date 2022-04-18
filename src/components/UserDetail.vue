@@ -1,27 +1,31 @@
 <template>
   <div class="user-detail" @click=close>
     <div class="user-detail__content" @click="e => e.stopPropagation()">
-      <div class="user-detail__header">&nbsp;</div>
-      <div class="user-detail__header" @click=close>
-        Close Icon
-      </div>
       <div class="user-detail__thumbnail">
         <img :src="user.image" class="user-detail__thumbnail__img"/>
       </div>
       <div class="user-detail__text">
-        <div class="user-card__preview__name">
+        <div class="user-detail__header" @click=close>
+          <img src="~@/assets/img/close-icon.png" class="user-detail__header__close" />
+        </div>
+        <div class="user-detail__name">
+          <img src="~@/assets/img/user-icon.png" class="user-detail__icon"/>
           {{user.name}}
         </div>
-        <div>
-          <a :href="'mailto:' + user.email">{{user.email}}</a>
+        <div class="user-detail__email" @click="sendEmail($event)">
+          <img src="~@/assets/img/mail-icon.png" class="user-detail__icon"/>
+          {{user.email}}
         </div>
         <div>
+          <img src="~@/assets/img/phone-icon.png" class="user-detail__icon"/>
           {{user.phone}}
         </div>
         <div>
+          <img src="~@/assets/img/home-icon.png" class="user-detail__icon"/>
           {{user.address.city}}, {{user.address.street}}
         </div>
-        <div>
+        <div class="user-detail__web" @click="goToWeb($event)">
+          <img src="~@/assets/img/web-icon.png" class="user-detail__icon"/>
           {{user.website}}
         </div>
       </div>
@@ -35,6 +39,13 @@ export default {
   methods: {
     close () {
       this.$emit('close')
+    },
+    sendEmail (e) {
+      e.stopPropagation()
+      location.href = 'mailto:' + this.user.email
+    },
+    goToWeb () {
+      window.open('http://' + this.user.website, '_blank')
     }
   }
 }
@@ -43,7 +54,8 @@ export default {
 <style lang="scss" scoped>
 a {
   text-decoration: none;
-  color: gray;
+  color: inherit;
+  margin-left: 5px;
 }
 .user-detail {
   position:absolute;
@@ -58,10 +70,10 @@ a {
 
   &__content {
     background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
+    margin: 10% auto;
     border: 1px solid #888;
-    width: 500px;
+    border-radius: 5px;
+    width: 600px;
 
     display: grid;
     grid-template-areas:
@@ -82,13 +94,37 @@ a {
   }
 
   &__header {
-    grid-area: "header";
     cursor: pointer;
+    position: relative;
+
+    &__close {
+      position: absolute;
+      width: 40px;
+      top: -40px;
+      right: 0px;
+    }
   }
 
   &__text {
     text-align: left;
     grid-area: "content";
+    margin-top: 40px;
+    margin-left: -30px;
+    font-weight: bold;
+  }
+
+  &__icon {
+    width: 30px;
+    vertical-align: middle;
+    padding: 5px;
+  }
+
+  &__email {
+    cursor: pointer;
+  }
+
+  &__web {
+    cursor: pointer;
   }
 }
 </style>
