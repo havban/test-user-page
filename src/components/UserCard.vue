@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div v-show="visiblePreview" class=user-card__preview>
-        <div>
+        <div class="user-card__email" @click="sendEmail">
           Email Icon
         </div>
         <div class="user-card__preview__name">
@@ -47,6 +47,9 @@ export default {
     },
     hidePreview () {
       this.visiblePreview = false
+    },
+    sendEmail () {
+      location.href = 'mailto:' + this.user.email
     }
   }
 }
@@ -85,6 +88,10 @@ export default {
     &__name {
       font-weight: bold;
     }
+  }
+
+  &__email {
+    cursor: pointer;
   }
 }
 </style>

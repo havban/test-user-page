@@ -13,7 +13,7 @@
           {{user.name}}
         </div>
         <div>
-          {{user.email}}
+          <a :href="'mailto:' + user.email">{{user.email}}</a>
         </div>
         <div>
           {{user.phone}}
@@ -41,6 +41,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+a {
+  text-decoration: none;
+  color: gray;
+}
 .user-detail {
   position:absolute;
   z-index:9;
