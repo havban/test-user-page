@@ -43,7 +43,7 @@
 
 <script>
 import { validateSession } from '@/utils/session'
-import UserCard from '@/components/UserCard'
+import UserCard from '@/components/UserCard.vue'
 
 export default {
   data () {

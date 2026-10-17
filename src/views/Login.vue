@@ -45,7 +45,7 @@
 
 <script>
 import { writeSession, validateSession } from '@/utils/session'
-import CompanyLogo from '@/components/CompanyLogo'
+import CompanyLogo from '@/components/CompanyLogo.vue'
 
 const CREDENTIAL = {
   username: 'admin',

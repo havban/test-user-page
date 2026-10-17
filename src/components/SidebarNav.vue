@@ -6,7 +6,7 @@
     </div>
     <div @click=doLogout
       class="sidebar-nav__logout">
-      <img src="~@/assets/img/logout.png" class="sidebar-nav__logout__icon" />
+      <img src="@/assets/img/logout.png" class="sidebar-nav__logout__icon" />
       {{username}}
     </div>
   </div>
@@ -34,8 +34,8 @@
 </style>
 
 <script>
-import MenuItem from '@/components/MenuItem'
-import CompanyLogo from '@/components/CompanyLogo'
+import MenuItem from '@/components/MenuItem.vue'
+import CompanyLogo from '@/components/CompanyLogo.vue'
 import { writeSession, getSession } from '@/utils/session'
 
 export default {

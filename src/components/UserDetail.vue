@@ -6,26 +6,26 @@
       </div>
       <div class="user-detail__text">
         <div class="user-detail__header" @click=close>
-          <img src="~@/assets/img/close-icon.png" class="user-detail__header__close" />
+          <img src="@/assets/img/close-icon.png" class="user-detail__header__close" />
         </div>
         <div class="user-detail__name">
-          <img src="~@/assets/img/user-icon.png" class="user-detail__icon"/>
+          <img src="@/assets/img/user-icon.png" class="user-detail__icon"/>
           {{user.name}}
         </div>
         <div class="user-detail__email" @click="sendEmail($event)">
-          <img src="~@/assets/img/mail-icon.png" class="user-detail__icon"/>
+          <img src="@/assets/img/mail-icon.png" class="user-detail__icon"/>
           {{user.email}}
         </div>
         <div>
-          <img src="~@/assets/img/phone-icon.png" class="user-detail__icon"/>
+          <img src="@/assets/img/phone-icon.png" class="user-detail__icon"/>
           {{user.phone}}
         </div>
         <div>
-          <img src="~@/assets/img/home-icon.png" class="user-detail__icon"/>
+          <img src="@/assets/img/home-icon.png" class="user-detail__icon"/>
           {{user.address.city}}, {{user.address.street}}
         </div>
         <div class="user-detail__web" @click="goToWeb($event)">
-          <img src="~@/assets/img/web-icon.png" class="user-detail__icon"/>
+          <img src="@/assets/img/web-icon.png" class="user-detail__icon"/>
           {{user.website}}
         </div>
       </div>

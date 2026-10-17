@@ -12,7 +12,7 @@
         @click=showDetail
         class="user-card__preview user-card__preview-area">
         <div class="user-card__email" @click="sendEmail($event)">
-          <img src="~@/assets/img/email-white.png" class="user-card__email__icon"/>
+          <img src="@/assets/img/email-white.png" class="user-card__email__icon"/>
         </div>
         <div class="user-card__preview__name">
           {{user.name}}
@@ -33,7 +33,9 @@
   </div>
 </template>
 <script>
-const UserDetail = () => import('@/components/UserDetail')
+import { defineAsyncComponent } from 'vue'
+
+const UserDetail = defineAsyncComponent(() => import('@/components/UserDetail.vue'))
 
 export default {
   props: ['user'],

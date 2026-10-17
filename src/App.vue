@@ -1,14 +1,16 @@
 <template>
-  <div id="app">
-    <SidebarNav class="app_sidebar" v-if="isNotLoginPage"/>
-    <div class="app_content">
-      <router-view/>
-    </div>
+  <!-- Rendered as a fragment directly inside <div id="app"> (index.html),
+       so the #app grid styles below apply exactly as in the Vue 2 version. -->
+  <SidebarNav class="app_sidebar" v-if="isNotLoginPage"/>
+  <div class="app_content">
+    <router-view/>
   </div>
 </template>
 
 <script>
-const SidebarNav = () => import('@/components/SidebarNav')
+import { defineAsyncComponent } from 'vue'
+
+const SidebarNav = defineAsyncComponent(() => import('@/components/SidebarNav.vue'))
 
 export default {
   components: {
